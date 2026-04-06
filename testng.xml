@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+    <test thread-count="1" name="Test">
+        <classes>
+
+            <class name="com.gardenticketing.tests.admin.LoginPageTC"/>
+            <class name="com.gardenticketing.tests.admin.DashboardTest"/>
+            <class name="com.gardenticketing.tests.admin.addgardenTC"/>
+            <class name="com.gardenticketing.tests.admin.BookingReportTC"/>
+            <class name="com.gardenticketing.tests.admin.ScannerTC"/>
+            <class name="com.gardenticketing.tests.admin.UsersTC"/>
+
+        </classes>
+    </test>
+
+</suite>
