@@ -25,11 +25,25 @@ public class ChallanPage {
 	@FindBy(xpath="//span[contains(text(),'Challan')]")
 	WebElement clickonchallan;
 	
-	@FindBy(xpath="//span[contains(@class,'select-none') and contains(@class,'rotate-180')] ")
+	@FindBy(xpath="//label[text()='Select Month']/preceding::span[.//*[name()='svg']][1]")
 	WebElement SelectMonth;
 	
-	@FindBy(xpath="//span[contains(@class,'select-none') and contains(@class,'rotate-0')]")
+	@FindBy(xpath="//div[text()='November']")
+	WebElement month;
+	
+	@FindBy(xpath="//label[normalize-space()='Select Year']/preceding::span[.//*[name()='svg']][1]")
 	WebElement selectyear;
+	
+	@FindBy(xpath="//div[text()='2025']")
+	WebElement Year;
+	
+	@FindBy(xpath="//button[@class='btn-primary']")
+	WebElement getchallanbutton;
+	
+	@FindBy(xpath="//div[@class='pt-3 mb-6']")
+	WebElement calendertable;
+	
+	
 	
 	
 	
@@ -53,17 +67,37 @@ public class ChallanPage {
 	    SelectMonth.click();
 	}
 	
+	public void Month() {
+		month.click();
+	}
+	
+//	public void selectbyTextmonth(String value) {
+//		Utilclass.selectByText(SelectMonth, value);
+//	}
+	
 	public void selectYearDD() {
 	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	    wait.until(ExpectedConditions.elementToBeClickable(selectyear));
 	    selectyear.click();
 	}
-	
-	public void selectbyTextmonth(String value) {
-		Utilclass.selectByText(SelectMonth, value);
+	public void Year() {
+		Year.click();
 	}
 	
-	public void selectbyTextYear(String value) {
-		Utilclass.selectByText(selectyear, value);
+//	public void selectbyTextYear(String value) {
+//		Utilclass.selectByText(selectyear, value);
+//	}
+	
+	
+	public void clickongetchallanbutton() {
+		getchallanbutton.click();
 	}
+	
+	public boolean getcalender() {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    wait.until(ExpectedConditions.visibilityOf(calendertable));
+	    return calendertable.isDisplayed();
+	}
+
+	
 }

@@ -6,8 +6,8 @@
       <class name="com.gardenticketing.tests.admin.ChallanTC">
         <methods>
           <include name="beforesetup"/>
-          <include name="loginToAdminOnce"/>
           <include name="setUpSuite"/>
+          <include name="loginToAdminOnce"/>
           <include name="tearDownSuite"/>
           <include name="verify_User_GetChallanSheet"/>
         </methods>
